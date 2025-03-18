@@ -1,78 +1,17 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
 header{
     border-style: solid;
     border-width: 1px;
-    border-color:black;
+    border-color: goldenrod;
     padding: 1rem;
     margin: 0px;
     background-color: gainsboro;
-    padding:1rem;
-    display:flex;
+    display: flex;
     gap: 0.5rem;
     align-items: center;
     justify-content: space-between;
-    }
-    *{
-        margin: 0.5px;
-        padding: 0.5px;
-    }
-    .navi ul{
-      list-style: none;
-      display: flex;
-      gap: 0.5rem;
-      align-items: center;
-
-    }
-    .navi a{
-        text-decoration: none;
-    }
-    .header image{
-        border: 3px;
-        border-color:black;
-        width:350rem;
-        height: 30rem;
-    }
-    .div{
-        display: flex;
-        gap: 0.5rem;
-        align-items: center;
-        justify-content: center;
-    }
-    .button{
-        padding:10px 2px;
-        margin: 15px;
-        color: aliceblue;
-        background-color: burlywood;
-        text-decoration: none;
-        font-size: 15px;
-        border-radius: 0.5rem;
-    }
-    .main img{
-        width: 40%;
-        height: 40%;
-        object-fit: cover;
-        filter: brightness(1);
-    }
-    /*.about{
-        align-items: center;
-        display: flex;
-        flex-direction: column;
-    }*/
-    .but{
-        text-decoration: none;
-    }
-    .okay{
-        text-align: center;
-        align-items: center;
-    }
-    .coding{
-        color: #2f034f;
-    }
-    .header{
-        text-align: center;
-        align-items: center;
-        background-color: goldenrod;
-    }
-    .Types1{
-        background-color: darkorange;
-        display: flex;
-    }
+}
