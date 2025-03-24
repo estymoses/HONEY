@@ -1,7 +1,6 @@
 *{
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
+    padding: 0.5px;
+    margin: 0.5px;
 }
 header{
     border-style: solid;
@@ -9,9 +8,79 @@ header{
     border-color: goldenrod;
     padding: 1rem;
     margin: 0px;
-    background-color: gainsboro;
+    background-color: goldenrod;
     display: flex;
-    gap: 0.5rem;
-    align-items: center;
+    gap: 1rem;
+    align-items:center;
     justify-content: space-between;
-}
+  }
+ .navi ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: flex-end;
+ }
+ .navi a{
+  text-decoration: none;
+ }
+ .div{
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: center;
+ }
+ .btn{
+  padding: 10px 3px;
+  margin: 15px;
+  text-decoration: none;
+  display: flex;
+  font-size: 16px;
+  border-radius: 0.5rem;
+  background-color: chocolate;
+ }
+ .types{
+  background-color:orange;
+ }
+ .main image{
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  filter: brightness(1);
+ }
+ .parah{
+  align-items: center;
+  justify-content: center;
+  display: flex;
+ }
+ .reem{
+    padding: 20px;
+    margin: 10px;
+ }
+ .rime{
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    display: flex;
+ }
+ #boid{
+    background-color: chocolate;
+ }
+ .bell{
+   display: flex;
+   justify-content: left;
+   gap: 2rem;
+   padding: 10px;
+   margin: 4px;
+ }
+ .rim{
+    justify-content: left; 
+    text-align: left;
+    align-items: center;
+    background-color:burlywood;
+ }
+ .honey{
+   display: flex;
+   align-items: center;
+   gap: 2rem;
+ }
