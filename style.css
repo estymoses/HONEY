@@ -121,9 +121,39 @@ header{
    padding: 10px;
    margin: 20px;
  }
- .apiary{
-   justify-content: center;
+ .bell{
    padding: 10px;
    margin: 20px;
    display: flex;
+   gap: 33rem;
+   position: static;
+   width: 25px;
+ }
+ .div1{
+
+
+ }
+.div2{
+
+}
+ .huni{
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+ }
+ .lychee{
+  height: 25px;
+  margin: 20px;
+  padding: 10px;
+  display: flex;
+  width: 25px;
+  gap: 35rem;
+  position: static;
+ }
+ .div3{
+
+
+ }
+ .div4{
+
  }
