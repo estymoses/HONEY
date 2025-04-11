@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Survey Form</title>
+  <link rel="stylesheet" href="index.html">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Feedback Survey</h1>
+  <p>Please take a few minutes to complete this survey. Your feedback is important to us!</p>
+  <form id="surveyForm">
+    <!-- Section 1: General Feedback -->
+    <h2>General Feedback</h2>
+    <label for="satisfaction">How satisfied are you with the app overall?</label>
+    <select id="satisfaction" name="satisfaction" required>
+      <option value="">--Select an option--</option>
+      <option value="Very Satisfied">Very Satisfied</option>
+      <option value="Satisfied">Satisfied</option>
+      <option value="Neutral">Neutral</option>
+      <option value="Dissatisfied">Dissatisfied</option>
+      <option value="Very Dissatisfied">Very Dissatisfied</option>
+    </select>
+
+    <label for="ease-of-use">On a scale of 1 to 5, how easy is the app to use? (1 = Very Difficult, 5 = Very Easy)</label>
+    <select id="ease-of-use" name="ease-of-use" required>
+      <option value="">--Select a rating--</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+    </select>
+
+    <label for="features">Which features do you use most often? (Check all that apply)</label>
+    <input type="checkbox" id="featureA" name="features" value="Feature A">
+    <label for="featureA">Feature A</label><br>
+    <input type="checkbox" id="featureB" name="features" value="Feature B">
+    <label for="featureB">Feature B</label><br>
+    <input type="checkbox" id="featureC" name="features" value="Feature C">
+    <label for="featureC">Feature C</label><br>
+    <input type="checkbox" id="featureD" name="features" value="Feature D">
+    <label for="featureD">Feature D</label>
+
+    <!-- Section 2: Specific Feedback -->
+    <h2>Specific Feedback</h2>
+    <label for="issues">Did you encounter any issues while using the app?</label>
+    <select id="issues" name="issues" required>
+      <option value="">--Select an option--</option>
+      <option value="Yes">Yes</option>
+      <option value="No">No</option>
+    </select>
+
+    <label for="issue-description">If yes, please describe the issue(s) you encountered:</label>
+    <textarea id="issue-description" name="issue-description" rows="4"></textarea>
+
+    <label for="improvements">What improvements would you suggest for the app?</label>
+    <textarea id="improvements" name="improvements" rows="4"></textarea>
+
+    <!-- Section 3: Demographics -->
+    <h2>Demographics</h2>
+    <label for="age-group">What is your age group?</label>
+    <select id="age-group" name="age-group" required>
+      <option value="">--Select an option--</option>
+      <option value="Under 18">Under 18</option>
+      <option value="18-24">18–24</option>
+      <option value="25-34">25–34</option>
+      <option value="35-44">35–44</option>
+      <option value="45+">45+</option>
+    </select>
+
+    <label for="usage-frequency">How often do you use mobile apps like ours?</label>
+    <select id="usage-frequency" name="usage-frequency" required>
+      <option value="">--Select an option--</option>
+      <option value="Daily">Daily</option>
+      <option value="Weekly">Weekly</option>
+      <option value="Monthly">Monthly</option>
+      <option value="Rarely">Rarely</option>
+    </select>
+
+    <!-- Submit Button -->
+    <button type="submit">Submit</button>
+  </form>
+
+  <!-- Thank You Message -->
+  <div class="thank-you" id="thankYouMessage">
+    Thank you for completing the survey! Your feedback is greatly appreciated.
+  </div>
+
+  <script>
+    // JavaScript to handle form submission
+    const surveyForm = document.getElementById('surveyForm');
+    const thankYouMessage = document.getElementById('thankYouMessage');
+
+    surveyForm.addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent the form from refreshing the page
+
+      // Display thank-you message
+      thankYouMessage.style.display = 'block';
+
+      // Optionally, you can log the form data to the console
+      const formData = new FormData(surveyForm);
+      const data = {};
+      formData.forEach((value, key) => {
+        data[key] = value;
+      });
+      console.log('Survey Responses:', data);
+
+      // Reset the form after submission
+      surveyForm.reset();
+    });
+  </script>
+
+</body>
+</html>

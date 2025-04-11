@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Survey Form</title>
+  <!-- Link to Survey-Specific CSS -->
+  <link rel="stylesheet" href="survey.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="honey">
+      <img src="IMAGES/honeyhoney.jpg" alt="Honey" width="100" height="100">
+      <h1>REEM HONEY</h1>
+    </div>
+    <nav class="navi">
+      <ul>
+        <li><a href="index.html">Back to Home</a></li> <!-- Link back to the homepage -->
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <form id="surveyForm">
+      <h2>Feedback Survey</h2>
+      <p>Please take a few minutes to complete this survey. Your feedback is important to us!</p>
+
+      <!-- Example Question -->
+      <label for="satisfaction">How satisfied are you with our honey products?</label>
+      <select id="satisfaction" name="satisfaction" required>
+        <option value="">--Select an option--</option>
+        <option value="Very Satisfied">Very Satisfied</option>
+        <option value="Satisfied">Satisfied</option>
+        <option value="Neutral">Neutral</option>
+        <option value="Dissatisfied">Dissatisfied</option>
+        <option value="Very Dissatisfied">Very Dissatisfied</option>
+      </select>
+
+      <label for="ease-of-use">On a scale of 1 to 5, how easy was it to use our website? (1 = Very Difficult, 5 = Very Easy)</label>
+      <select id="ease-of-use" name="ease-of-use" required>
+        <option value="">--Select a rating--</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+
+      <label for="improvements">What improvements would you suggest for our products or website?</label>
+      <textarea id="improvements" name="improvements" rows="4"></textarea>
+
+      <button type="submit">Submit</button>
+    </form>
+
+    <div class="thank-you" id="thankYouMessage" style="display: none;">
+      Thank you for completing the survey!
+    </div>
+  </main>
+
+  <footer>&copy ESTHER 2025</footer>
+
+  <script>
+    const surveyForm = document.getElementById('surveyForm');
+    const thankYouMessage = document.getElementById('thankYouMessage');
+
+    surveyForm.addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent form submission
+      thankYouMessage.style.display = 'block';
+      surveyForm.reset();
+    });
+  </script>
+
+</body>
+</html>
