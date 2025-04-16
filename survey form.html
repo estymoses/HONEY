@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Customer Feedback Survey - REEM HONEY</title>
+        <link rel="stylesheet" href="style.css"> <!-- Link to your CSS file -->
+</head>
+<body>
+    <header>
+            <h1 class="survey-title">Customer Feedback Survey</h1>
+            <p class="survey-subtitle"></p>
+    </header>
+              <!-- Home Button -->
+      <section class="home-button">
+              <a href="index.html" class="btn">HOME</a>
+      </section>
+    <main>
+             <form id="surveyForm">
+             <!-- Section 1: General Feedback -->
+             <section>
+                <h2>General Feedback</h2>
+                <label for="satisfaction">How satisfied are you with our honey products?</label>
+                <select id="satisfaction" name="satisfaction" required>
+                    <option value="">--Select an option--</option>
+                    <option value="Very Satisfied">Very Satisfied</option>
+                    <option value="Satisfied">Satisfied</option>
+                    <option value="Neutral">Neutral</option>
+                    <option value="Dissatisfied">Dissatisfied</option>
+                    <option value="Very Dissatisfied">Very Dissatisfied</option>
+                </select>
+
+                <label for="ease-of-use">On a scale of 1 to 5, how easy was it to purchase from our website? (1 = Very Difficult, 5 = Very Easy)</label>
+                <select id="ease-of-use" name="ease-of-use" required>
+                    <option value="">--Select a rating--</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+
+                <label for="favorite-product">What is your favorite REEM HONEY product? (Optional)</label>
+                <input type="text" id="favorite-product" name="favorite-product" placeholder="e.g., Pure Wild Honey">
+            </section>
+
+            <!-- Section 2: Usage and Preferences -->
+            <section>
+                <h2>Usage and Preferences</h2>
+                <label for="usage-frequency">How often do you use honey?</label>
+                <select id="usage-frequency" name="usage-frequency" required>
+                    <option value="">--Select an option--</option>
+                    <option value="Daily">Daily</option>
+                    <option value="Weekly">Weekly</option>
+                    <option value="Monthly">Monthly</option>
+                    <option value="Rarely">Rarely</option>
+            </select>
+
+                <label for="purpose">What do you primarily use honey for? (Check all that apply)</label>
+                <div>
+                    <input type="checkbox" id="cooking" name="purpose" value="Cooking">
+                    <label for="cooking">Cooking</label><br>
+                    <input type="checkbox" id="health" name="purpose" value="Health Benefits">
+                    <label for="health">Health Benefits</label><br>
+                    <input type="checkbox" id="skincare" name="purpose" value="Skincare">
+                    <label for="skincare">Skincare</label><br>
+                    <input type="checkbox" id="gift" name="purpose" value="Gifting">
+                    <label for="gift">Gifting</label><br>
+                    <input type="checkbox" id="other" name="purpose" value="Other">
+                    <label for="other">Other</label>
+                </div>
+            </section>
+
+            <!-- Section 3: Suggestions and Feedback -->
+            <section>
+                  <h2>Suggestions and Feedback</h2>
+                  <label for="improvements">What improvements would you suggest for our products or services?</label>
+                <textarea id="improvements" name="improvements" rows="4" placeholder="Your feedback here..."></textarea>
+
+                <label for="recommendation">Would you recommend REEM HONEY to others?</label>
+                <select id="recommendation" name="recommendation" required>
+                    <option value="">--Select an option--</option>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+            </section>
+
+            <!-- Submit Button -->
+            <button type="submit">Submit Feedback</button>
+        </form>
+
+        <!-- Thank You Message -->
+        <div class="thank-you" id="thankYouMessage" style="display: none;">
+            Thank you for completing the survey! Your feedback is greatly appreciated.
+        </div>
+    </main>
+
+    <script>
+        // Handle form submission
+        const surveyForm = document.getElementById('surveyForm');
+        const thankYouMessage = document.getElementById('thankYouMessage');
+
+        surveyForm.addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent page refresh
+
+            // Show thank-you message
+            thankYouMessage.style.display = 'block';
+
+            // Log form data to console
+            const formData = new FormData(surveyForm);
+            const data = {};
+            formData.forEach((value, key) => {
+                data[key] = value;
+            });
+            console.log('Survey Responses:', data);
+
+            // Reset the form
+            surveyForm.reset();
+        });
+    </script>
+</body>
+</html>
