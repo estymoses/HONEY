@@ -8,8 +8,9 @@
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
-    background-color: #f9f9f9;
+    background-color: #fff8dc; /* Honey-like light yellow */
     color: #333;
+    padding: 2rem;
 }
 
 /* Header Styles */
@@ -17,8 +18,8 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #ffcc00; /* Honey-like yellow */
-    padding: 4rem;
+    background-color: #ffcc00; /* Warm honey yellow */
+    padding:1rem 2rem;
 }
 
 header .logo {
@@ -27,6 +28,8 @@ header .logo {
 }
 
 header .logo img {
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
     margin-right: 1rem;
 }
@@ -34,12 +37,13 @@ header .logo img {
 header h1 {
     font-size: 1.8rem;
     color: #333;
+    font-weight: bold;
 }
 
 nav ul {
     list-style: none;
     display: flex;
-    gap: 1rem;
+    gap: 1.5rem;
 }
 
 nav ul li a {
@@ -50,9 +54,86 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    color: #ff6600;
+    color: #ff6600; /* Honey orange on hover */
 }
 
+/* Main Content Styles */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+.content-wrapper {
+    display: flex;
+    align-items: flex-start; /* Aligns items at the top */
+    gap: 2rem; /* Space between image and text */
+    flex-wrap: wrap; /* Ensures responsiveness */
+}
+
+.main-img {
+    max-width: 20%; /* Smaller image size */
+    height: auto; /* Maintains aspect ratio */
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    margin-bottom: 1.5rem; /* Adds spacing below the image */
+    flex-shrink: 0; /* Prevents the image from shrinking too much */
+}
+
+.text-content {
+    flex: 1; /* Allows the text to take up remaining space */
+    font-size: 1.2rem;
+    color: #555;
+    line-height: 1.8;
+}
+
+/* Responsive Design Adjustments */
+@media (max-width: 768px) {
+    .content-wrapper {
+        flex-direction: column; /* Stack image and text on smaller screens */
+        text-align: center; /* Center-align everything */
+    }
+
+    .main-img {
+        max-width: 60%; /* Larger image on mobile */
+        margin: 0 auto; /* Centers the image */
+    }
+}
+
+main p {
+    font-size: 1.2rem;
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+    flex: 1; /* Allows text to take remaining space */
+}
+
+/* Responsive Design Adjustments */
+@media (max-width: 768px) {
+    .content-wrapper {
+        flex-direction: column; /* Stack image and text on smaller screens */
+        text-align: center;
+    }
+
+    .main-img {
+        max-width: 80%; /* Slightly smaller image on mobile */
+        margin: 0 auto; /* Center the image */
+    }
+}
+
+/* Footer Styles */
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: bisque; /* Soft beige */
+    color: #333;
+    font-size: 0.9rem;
+    margin-top: 2rem;
+}
+
+footer p {
+    margin: 0;
+}
 /* Main Content Styles */
 main {
     text-align: center;
@@ -61,13 +142,14 @@ main {
 
 main .main-img {
     max-width: 50%;
-    height:;
+    height:150px ;
     border-radius: 10px;
     margin-bottom: 1rem;
     display: flex;
     align-items: left;
     justify-content: left;
-    /* Main Image Styling */
+}
+/* Main Image Styling */
 main .main-img {
     max-width: 100%; /* Ensures the image is responsive */
     height: auto; /* Maintains aspect ratio */
@@ -85,7 +167,6 @@ main .main-img {
         width: 80%; /* Adjusts image size to 80% of the container width */
         max-width: 800px; /* Limits maximum width for larger screens */
     }
-}
 }
 
 main p {
