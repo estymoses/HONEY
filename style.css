@@ -9,9 +9,15 @@ body {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
     color: darkgoldenrod;
-    background-color: #f9f9f9;
+    background-color:white;
 }
-
+.fixed-container{
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
 /* Header Styling */
 header {
     display: flex;
@@ -19,7 +25,7 @@ header {
     align-items: center;
     padding: 1rem 2rem;
     background-color: #ffcc33; /* Warm honey color */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: darkgoldenrod;
 }
 
 header .logo {
@@ -28,12 +34,11 @@ header .logo {
 }
 
 header .logo img {
-    width: 50px;
-    height: 50px;
+    width: 100px;
+    height: 90px;
     margin-right: 10px;
     border-radius: 50%;
 }
-
 header h1 {
     font-size: 1.5rem;
     color: #fff;
@@ -71,10 +76,9 @@ nav ul li a:hover {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.4); /* Adds a semi-transparent overlay */
+    background:darkgoldenrod;
     backdrop-filter: blur(5px); /* Blurs the background image */
 }
-
 .hero-overlay {
     position: absolute;
     top: 50%;
@@ -84,12 +88,11 @@ nav ul li a:hover {
     color: #fff;
     z-index: 2;
 }
-
 .hero-title {
     font-size: 4rem;
     font-weight: bold;
     margin-bottom: 1rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    text-shadow:#C14C00;
 }
 
 .hero-subtitle {
@@ -101,14 +104,14 @@ nav ul li a:hover {
 /* About Section Styling */
 .about {
     padding: 4rem 2rem;
-    background-color:#A93301;
+    background-color:#F7EC93;
     text-align: center;
 }
 
 .about h2 {
     font-size: 2.5rem;
     margin-bottom: 1.5rem;
-    color: #ffcc33;
+    color:#BD4B02;
 }
 
 .about p {
@@ -135,7 +138,7 @@ nav ul li a:hover {
     background-color: #fffdf5;
     padding: 1rem;
     border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: darkgoldenrod;
     text-align: center;
     max-width: 300px;
 }
@@ -155,13 +158,13 @@ nav ul li a:hover {
 .project p {
     font-size: 1rem;
     line-height: 1.6;
-    color: #555;
+    color:darkgoldenrod;
 }
 
 /* Services Section Styling */
 .services {
     padding: 4rem 2rem;
-    background-color: #fffdf5;
+    background-color:#d89f85;
     text-align: center;
 }
 
@@ -184,7 +187,7 @@ nav ul li a:hover {
 .service h3 {
     font-size: 1.5rem;
     margin-bottom: 1rem;
-    color: #ffcc33;
+    color:#bd9481;
 }
 
 .service p {
@@ -196,7 +199,7 @@ nav ul li a:hover {
 /* Contact Section Styling */
 .contact {
     padding: 4rem 2rem;
-    background-color:darkgoldenrod;
+    background-color:#F7EC93;
     text-align: center;
 }
 
@@ -210,7 +213,7 @@ nav ul li a:hover {
 
 .contact label {
     font-weight: bold;
-    color: #ffcc33;
+    color:#BD4B02;
 }
 
 .contact input,
@@ -223,8 +226,8 @@ nav ul li a:hover {
 
 .contact button {
     padding: 0.8rem;
-    background-color: #ffcc33;
-    color: #fff;
+    background-color:#C14C00;
+    color:white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -264,4 +267,11 @@ footer p {
 
 .social-links a:hover {
     color: #ff6600;
+}
+.fixed-contain{
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
 }
