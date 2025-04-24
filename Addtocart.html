@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Honey Products - Checkout</title>
+
+    <!-- Include Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8UoGRxsPQB4CcFSw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        body {
+            font-family: 'times new roman'; /* Elegant serif font */
+            background-color: #f4e9d8; /* Creamy beige background */
+            color: #633a1b; /* Deep brown text */
+            padding: 2rem;
+            line-height: 1.6;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 3rem;
+            font-weight: bold;
+            color: #8b5a2b; /* Warm honey brown */
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        /* Header Styling */
+        header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 1rem 2rem;
+          background-color: #ffcc33; /* Warm honey color */
+          box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+          flex: 1; /* Allows the header to grow and fill the remaining space */
+     }
+
+        header .logo {
+         display: flex;
+         align-items: center;
+      }
+
+        header .logo img {
+          width: 100px;
+          height: 90px;
+          margin-right: 10px;
+          border-radius: 50%;
+       }
+         header h1 {
+          font-size: 1.5rem;
+          color: #fff;
+       }
+
+       .fixed-container{
+          position: sticky;
+          top: 0;
+          left: 0;
+          width: 100%;
+          z-index: 1000;
+       }
+
+        nav ul {
+          list-style: none;
+          display: flex;
+          gap: 1.5rem;
+       }
+
+        nav ul li a {
+          text-decoration: none;
+          color: #fff;
+          font-weight: bold;
+          transition: color 0.3s ease;
+       }
+
+        nav ul li a:hover {
+        color: #ff6600; /* Darker orange on hover */
+        }
+
+
+        /* Grid Layout for Honey Products */
+        .honey-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Reduced column width */
+            gap: 2rem; /* Adjusted gap for smaller images */
+        }
+        .honey-item {
+            background-color: #fffaf0; /* Off-white card background */
+            border: 2px solid #f7e6c4; /* Light golden border */
+            border-radius: 15px;
+            padding: 1rem;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .honey-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Reduced Image Width */
+        .honey-item img {
+            width: 100px; /* Smaller fixed width */
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+        }
+
+        .honey-item h3 {
+            font-size: 1.2rem; /* Slightly reduced font size */
+            font-weight: bold;
+            color: #8b5a2b;
+            margin-bottom: 0.5rem;
+        }
+
+        .honey-item p {
+            font-size: 0.8rem; /* Reduced font size for description */
+            color: #633a1b;
+            margin-bottom: 1rem;
+        }
+
+        .add-to-cart-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.6rem 1rem; /* Reduced padding */
+            background-color: #d2b48c; /* Sandy brown button */
+            color: #fff;
+            border: none;
+            border-radius: 25px; /* Rounded pill shape */
+            cursor: pointer;
+            font-size: 0.9rem; /* Reduced font size */
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+            gap: 0.5rem; /* Space between icon and text */
+        }
+
+        .add-to-cart-btn:hover {
+            background-color: #a0522d; /* Darker brown on hover */
+        }
+
+        /* Cart Section */
+        .cart-section {
+            margin-top: 3rem;
+            text-align: center;
+        }
+
+        /* Checkout Form */
+        .checkout-form {
+            max-width: 600px;
+            margin: 2rem auto;
+            background-color: #fffaf0;
+            padding: 2rem;
+            border: 2px solid #f7e6c4;
+            border-radius: 15px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .checkout-form h2 {
+            font-size: 1.8rem;
+            color: #8b5a2b;
+            margin-bottom: 1.5rem;
+        }
+
+        .checkout-form label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+            color: #633a1b;
+        }
+
+        .checkout-form input,
+        .checkout-form textarea {
+            width: 100%;
+            padding: 0.7rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .checkout-form button {
+            display: inline-block;
+            padding: 0.7rem 1.5rem;
+            background-color: #ffcc33;
+            color: #fff;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .checkout-form button:hover {
+            background-color: #ff6600;
+        }
+
+        .payment-slip {
+            margin-top: 2rem;
+            padding: 1rem;
+            background-color: #fffdf5;
+            border: 1px solid #f7ec93;
+            border-radius: 10px;
+            text-align: left;
+        }
+
+        .payment-slip h3 {
+            font-size: 1.5rem;
+            color: #8b5a2b;
+            margin-bottom: 1rem;
+        }
+
+        .payment-slip p {
+            font-size: 1rem;
+            color: #633a1b;
+            margin-bottom: 0.5rem;
+        }
+
+        .payment-slip strong {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+          <!-- Header Section -->
+     <div class="fixed-container">
+        <header>
+            <div class="logo">
+                <img src="./IMG/honeyhoney.jpg" alt="REEM HONEY logo" class="logo-image">
+                <h1>REEM HONEY</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="#portfolio">Categories</a></li>
+                    <li><a href="Service.html">Services</a></li>
+                    <li><a href="Addtocart.html">Add To Cart</a></li>
+                </ul>
+            </nav>
+        </header>
+     </div>
+    <h1>Our Honey Collection</h1>
+
+    <!-- Honey Grid -->
+    <div class="honey-grid">
+        <!-- Product 1 -->
+        <div class="honey-item">
+            <img src="./IMG/Acaciahuni.jpg" alt="Acacia Honey"> <!-- Updated placeholder image size -->
+            <h3>Acacia Honey</h3>
+            <p>A light golden,with a mild,sweet flavour,acacia honey is slow to crystallize,<br>making it ideal for sweetening beverages,yoghurt,<br>or as a natural energy booster.</p>
+            <button class="add-to-cart-btn" data-product="Acacia Honey" data-price="80,000">Add to Cart ₦80,000</button>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="honey-item">
+            <img src="./IMG/manukahuni.jpg" alt="Manuka Honey"> <!-- Updated placeholder image size -->
+            <h3>Manuka Honey</h3>
+            <p>Manuka honey is known for<br> it's antibacterial properties<br> and earthy,robust flavor.Perfect for wellness enthusiasts<br> and those seeking natural remedies.</p>
+            <button class="add-to-cart-btn" data-product="Manuka Honey" data-price="65,000">Add to Cart ₦65,000</button>
+       </div>
+       
+       <!-- Product 3-->
+        <div class="honey-item">
+            <img src="./IMG/heatherhuni.jpg" alt="heather Honey"> <!-- Updated placeholder image size -->
+            <h3>Heather Honey</h3>
+            <p>A thick,jelly-like honey<br> with a strong aromatic flavour,<br>sourced from heather flowers,its a luxurious choice for<br> cheese pairings and gourmet dishes.</p>
+            <button class="add-to-cart-btn" data-product="Heather Honey" data-price="45,000">Add to Cart ₦45,000</button>
+        </div> 
+        
+        <!-- Product 4-->
+        <div class="honey-item">
+            <img src="./IMG/cotton.jpg" alt="Cotton Honey"> <!-- Updated placeholder image size -->
+            <h3>Cotton Honey</h3>
+            <p>A light,sweet honey with<br> a subtle floral taste.<br>Cotton honey is commonly used in baking <br>and as an natural sweetner in beverages. </p>
+            <button class="add-to-cart-btn" data-product="Cotton Honey" data-price="50,000">Add to Cart ₦50,000</button>
+        </div>
+        </div>
+
+    <!-- Cart Section -->
+    <div class="cart-section">
+        <h2>Your Cart</h2>
+        <div id="cart-summary"></div>
+    </div>
+
+    <!-- Checkout Form -->
+    <div class="checkout-form">
+        <h2>Checkout</h2>
+        <form id="checkout-form">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" required placeholder="Enter your full name">
+
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" required placeholder="Enter your email address">
+
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" required placeholder="Enter your phone number">
+
+            <label for="address">Delivery Address</label>
+            <textarea id="address" name="address" rows="3" required placeholder="Enter your delivery address"></textarea>
+
+            <button type="submit">Place Order & Pay</button>
+        </form>
+    </div>
+
+    <!-- Payment Slip -->
+    <div class="payment-slip" id="payment-slip" style="display: none;">
+        <h3>Payment Slip</h3>
+        <p><strong>Order Summary:</strong></p>
+        <div id="slip-items"></div>
+        <p><strong>Total Amount:</strong> ₦<span id="slip-total">0</span></p>
+        <p><strong>Thank you for your order!</strong> A receipt has been sent to your email.</p>
+    </div>
+
+    <script>
+        // JavaScript for Add to Cart Functionality
+        const addToCartButtons = document.querySelectorAll('.add-to-cart-btn');
+        const cartSummary = document.querySelector('#cart-summary');
+        const checkoutForm = document.querySelector('#checkout-form');
+        const paymentSlip = document.querySelector('#payment-slip');
+        const slipItems = document.querySelector('#slip-items');
+        const slipTotal = document.querySelector('#slip-total');
+
+        let cartItems = [];
+
+        // Add to Cart Button Click Event
+        addToCartButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const productName = button.getAttribute('data-product');
+                const productPrice = parseFloat(button.getAttribute('data-price'));
+
+                // Check if the product is already in the cart
+                const existingItem = cartItems.find(item => item.name === productName);
+                if (existingItem) {
+                    existingItem.quantity += 1; // Increment quantity
+                } else {
+                    cartItems.push({ name: productName, price: productPrice, quantity: 1 }); // Add new item
+                }
+
+                updateCartSummary(); // Update the cart summary
+            });
+        });
+
+        // Function to update the cart summary
+        function updateCartSummary() {
+            cartSummary.innerHTML = ''; // Clear the cart summary
+
+            if (cartItems.length === 0) {
+                cartSummary.textContent = 'Your cart is empty.';
+                return;
+            }
+
+            cartItems.forEach(item => {
+                const itemElement = document.createElement('p');
+                itemElement.textContent = `${item.name} x ${item.quantity} = ₦${(item.price * item.quantity).toFixed(2)}`;
+                cartSummary.appendChild(itemElement);
+            });
+        }
+
+        // Checkout Form Submission
+        checkoutForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            // Get form data
+            const formData = new FormData(checkoutForm);
+            const customerData = {
+                name: formData.get('name'),
+                email: formData.get('email'),
+                phone: formData.get('phone'),
+                address: formData.get('address'),
+                items: cartItems,
+                total: calculateTotal()
+            };
+
+            // Generate Payment Slip
+            generatePaymentSlip(customerData);
+
+            // Send Email via Formspree
+            try {
+                const response = await fetch('https://formspree.io/f/your-formspree-endpoint', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        name: customerData.name,
+                        email: customerData.email,
+                        phone: customerData.phone,
+                        address: customerData.address,
+                        items: customerData.items.map(item => `${item.name} x ${item.quantity} = ₦${(item.price * item.quantity).toFixed(2)}`),
+                        total: `₦${customerData.total.toFixed(2)}`
+                    })
+                });
+
+                if (response.ok) {
+                    alert('Order placed successfully! A receipt has been sent to your email.');
+                } else {
+                    alert('There was an issue submitting your order. Please try again.');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('An error occurred while submitting your order.');
+            }
+        });
+
+        // Function to calculate total price
+        function calculateTotal() {
+            let total = 0;
+            cartItems.forEach(item => {
+                total += item.price * item.quantity;
+            });
+            return total;
+        }
+
+        // Function to generate payment slip
+        function generatePaymentSlip(data) {
+            slipItems.innerHTML = ''; // Clear previous slip items
+
+            data.items.forEach(item => {
+                const itemElement = document.createElement('p');
+                itemElement.textContent = `${item.name} x ${item.quantity} = ₦${(item.price * item.quantity).toFixed(2)}`;
+                slipItems.appendChild(itemElement);
+            });
+
+            slipTotal.textContent = data.total.toFixed(2); // Update total amount
+            paymentSlip.style.display = 'block'; // Show payment slip
+        }
+    </script>
+</body>
+</html>
